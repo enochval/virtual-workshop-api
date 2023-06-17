@@ -3489,6 +3489,91 @@
 				}
 			],
 			"id": "710fc5dc-b4b2-4f87-b185-9019ed9c1ca9"
+		},
+		{
+			"name": "virtual",
+			"item": [
+				{
+					"name": "Get Number of Participants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "734d817f-6dbd-4be0-8fae-ba5a1f6fd541",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a35a5b26-c115-4953-87a0-1cf449735d4c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/participants/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"participants",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Number of Participants Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65fe8b0d-d190-4283-9d0f-8279db5a57f5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "162a273e-6a58-4af0-922a-e100f1f2c9a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/participants/:participantId/address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"participants",
+								":participantId",
+								"address"
+							],
+							"variable": [
+								{
+									"key": "participantId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "4fc4303a-251b-4efe-8702-c1de573194e7"
 		}
 	],
 	"variable": [
